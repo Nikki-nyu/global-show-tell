@@ -24,40 +24,25 @@
 			win.addEventListener(resizeEvt, recalc, false);
 			doc.addEventListener('DOMContentLoaded', recalc, false);
 		})(document, window);
-
-		// 设置 rem 基准值
-		// (function flexible() {
-		// 	const docEl = document.documentElement;
-
-		// 	function setRemUnit() {
-		// 		const rem = 100 * (clientWidth / 720);
-		// 		docEl.style.fontSize = rem + 'px';
-		// 	}
-
-		// 	setRemUnit();
-		// 	window.addEventListener('resize', setRemUnit);
-		// 	window.addEventListener('orientationchange', setRemUnit);
-		// })();
-
-
 	</script>
+
 	<style>
 		* {
 			padding: 0;
 			margin: 0;
 		}
-	
+
 		body {
 			font-family: 'MyCustomFont';
 			color: #333;
 		}
-	
+
 		.page-body {
 			width: 100%;
 			/* overflow-x: auto; */
 		}
-	
-	
+
+
 		@font-face {
 			font-family: 'MyCustomFont';
 			src: url('/global-show-tell/opencall/assets/InterVariable.woff2') format('woff2');
@@ -65,7 +50,7 @@
 			font-style: italic;
 			font-display: swap;
 		}
-	
+
 		@font-face {
 			font-family: 'MyCustomFont';
 			font-style: italic;
@@ -73,136 +58,80 @@
 			font-display: swap;
 			src: url("/global-show-tell/opencall/assets/InterVariable-Italic.woff2") format("woff2");
 		}
-	
+
 		.li-box {
 			height: 1400px;
 			width: 100%;
 			position: relative;
 			z-index: 1;
 		}
-	
+
 		.zhuti {
-			height: 1700px;
+			height: 1300px;
 			margin: 0px 0;
 			position: relative;
 			/* padding-bottom: 100px; */
 		}
-	
+
 		.shadow-title {
 			position: sticky;
 			z-index: -1;
 			left: 20px;
 			top: 0;
 			color: #000;
-	
-			margin-left: 64px;
 		}
-	
-		.title-text {
-			height: 180px;
-			display: flex;
-			flex-direction: column;
-			font-size: 180px;
-			font-style: italic;
-			font-weight: 900;
-			font-family: 'MyCustomFont';
-			-webkit-text-stroke: #EAEA24 2px;
-			color: #EAEA24;
-			margin-left: 13px;
+
+		.title-text-bg {
+			background: url('/global-show-tell/opencall/assets/title-text.png');
+			width: calc(942px /2);
+			height: calc(545px /2);
+			background-size: 100% 100%;
 		}
-	
+
 		.center-box {
 			height: 960px;
-			margin-top: 220px;
+			margin-top: -60px;
 			position: relative;
 			z-index: 1;
 		}
-	
-		.boxFixed {
-			z-index: 10;
-		}
-	
+
 		.img-bg {
 			background: url('/global-show-tell/opencall/assets/head-bg-all.jpg');
 			height: 950px;
 		}
-	
-		.imgFixed {
-			height: 100px;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 1;
-			background: url('/global-show-tell/opencall/assets/head-bg-all.jpg');
-			background-position: 0 1070px;
-			/* opacity: 0.75; */
-			/* animation: imgFixed 0.5s forwards ease-in-out; */
-		}
-	
-		@keyframes imgFixed {
-	
-			/* from表示动画的开始位置，也可以使用0%来表示。 */
-			from {
-				opacity: 1;
-			}
-	
-			/* to表示动画的结束位置，也可以使用100%来表示。 */
-			to {
-				opacity: 1;
-			}
-		}
-	
+
 		.on-shadow-title-box {
 			position: absolute;
 			z-index: 3;
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 1700px;
+			height: 1300px;
 			pointer-events: none;
-	
+
 		}
-	
-		.on-shadow-title {
+
+		.on-shadow-title-bg {
 			position: sticky;
 			z-index: -1;
-			left: 20px;
+			left: 0;
 			top: 0;
-			height: 180px;
-			display: flex;
-			flex-direction: column;
-			font-size: 180px;
-			margin-left: 62px;
-			font-family: 'MyCustomFont';
-			font-style: italic;
-			font-weight: 900;
-			-webkit-text-stroke: #94BA24 2px;
-			color: rgba(0, 0, 0, 0);
-	
+			background: url('/global-show-tell/opencall/assets/title-shadow.png');
+			width: calc(971px /2);
+			height: calc(531px /2);
+			background-size: 100% 100%;
 		}
-	
-		.second-line {
-			/* margin-top: -90px; */
-			line-height: 30px;
-		}
-	
-		.title-text div {
-			position: relative;
-			top: 17px;
-		}
-	
-	
+
 		.content {
 			position: relative;
-			top: 500px;
+			top: 0;
 			/* opacity: 0; */
 			left: 0;
 			right: 0;
 			margin: 0 auto;
 		}
-	
-	
+
+
 		::-webkit-scrollbar {
 			width: 0px;
 			/*  */
@@ -210,7 +139,7 @@
 			/* height: 10px; */
 			/* 横向滚动条的高度 */
 		}
-	
+
 		.tab-box {
 			padding: 30px 63px;
 			max-width: 1414px;
@@ -218,9 +147,9 @@
 			margin: 0 auto;
 			display: flex;
 			gap: 20px;
-	
+
 		}
-	
+
 		.tab-item {
 			padding: 0 40px;
 			height: 57px;
@@ -236,15 +165,15 @@
 			font-size: 32px;
 			text-align: center;
 		}
-	
+
 		.tab-box .active {
 			animation: active 0.75s forwards linear;
 		}
-	
+
 		.tab-box .normal {
 			animation: noActive 0.75s forwards linear;
 		}
-	
+
 		.paragraph-box {
 			padding: 30px 63px;
 			/* min-width: 954px; */
@@ -253,45 +182,45 @@
 			margin: 0 auto;
 			font-size: 20px;
 		}
-	
-	
+
+
 		.paragraph-box p {
 			margin-bottom: 20px;
 			font-size: 20px;
 		}
-	
+
 		.group-class {
 			margin-bottom: 20px;
 		}
-	
+
 		.group-class p {
 			margin-bottom: 0;
 		}
-	
+
 		.paragraph-box .title {
 			color: rgba(184, 184, 18, 1);
 			font-size: 42px;
 			font-weight: 700;
 			line-height: 89px;
 		}
-	
+
 		.paragraph-box b {
 			font-weight: 700;
 		}
-	
+
 		.paragraph-box li {
 			font-size: 26px;
 		}
-	
+
 		.paragraph-box a {
 			color: #000;
 		}
-	
+
 		@keyframes active {
-	
+
 			/* from表示动画的开始位置，也可以使用0%来表示。 */
 			from {}
-	
+
 			/* to表示动画的结束位置，也可以使用100%来表示。 */
 			to {
 				flex: 1;
@@ -300,14 +229,14 @@
 				font-weight: 600;
 			}
 		}
-	
+
 		@keyframes noActive {
-	
+
 			/* from表示动画的开始位置，也可以使用0%来表示。 */
 			from {
 				flex: 1
 			}
-	
+
 			/* to表示动画的结束位置，也可以使用100%来表示。 */
 			to {
 				border: 2px solid rgba(0, 0, 0, 1);
@@ -315,12 +244,12 @@
 				font-weight: 400;
 			}
 		}
-	
+
 		@keyframes activeforMax1080 {
-	
+
 			/* from表示动画的开始位置，也可以使用0%来表示。 */
 			from {}
-	
+
 			/* to表示动画的结束位置，也可以使用100%来表示。 */
 			to {
 				width: calc(100% - 72px);
@@ -329,14 +258,14 @@
 				font-weight: 600;
 			}
 		}
-	
+
 		@keyframes noActiveforMax1080 {
-	
+
 			/* from表示动画的开始位置，也可以使用0%来表示。 */
 			from {
 				width: calc(100% - 72px);
 			}
-	
+
 			/* to表示动画的结束位置，也可以使用100%来表示。 */
 			to {
 				border: 2px solid rgba(0, 0, 0, 1);
@@ -344,13 +273,10 @@
 				font-weight: 400;
 			}
 		}
-	
-	
+
+
 		@media screen and (max-width:1080px) and (min-width:768px) {
-			.content {
-				position: absolute;
-				top: 1580px;
-			}
+
 			.tab-box {
 				padding: 0.2rem 0.36rem;
 				max-width: 1414px;
@@ -361,7 +287,7 @@
 				gap: 0;
 				font-size: 0;
 			}
-	
+
 			.tab-item {
 				padding: 0 40px;
 				height: 57px;
@@ -378,17 +304,17 @@
 				font-size: 0.2rem;
 				text-align: center;
 			}
-	
+
 			.tab-box .normal {
 				animation: noActiveforMax1080 0.75s forwards linear;
 				margin-bottom: 10px;
 			}
-	
+
 			.tab-box .active {
 				animation: activeforMax1080 0.75s forwards linear;
 				margin-bottom: 10px;
 			}
-	
+
 			.paragraph-box {
 				padding: 20px 63px;
 				/* min-width: 954px; */
@@ -398,9 +324,47 @@
 				font-size: 20px;
 			}
 		}
-	
+
 		@media screen and (max-width:640px) {
-	
+			.li-box {
+				height: 14rem;
+			}
+
+			.zhuti {
+				height: 13rem;
+			}
+
+			.on-shadow-title-box {
+				height: 13rem;
+			}
+
+			.center-box {
+				height: 9.6rem;
+				margin-top: -0.6rem;
+			}
+
+			.img-bg {
+				height: 9.5rem;
+			}
+
+			.title-text-bg {
+				background: url('/global-show-tell/opencall/assets/title-text.png');
+				width: calc(9.42rem /2);
+				height: calc(5.45rem /2);
+				background-size: 100% 100%;
+			}
+
+			.on-shadow-title-bg {
+				position: sticky;
+				z-index: -1;
+				left: 0;
+				top: 0;
+				background: url('/global-show-tell/opencall/assets/title-shadow.png');
+				width: calc(9.71rem /2);
+				height: calc(5.31rem /2);
+				background-size: 100% 100%;
+			}
+
 			.tab-box {
 				padding: 0.3rem 0.36rem;
 				max-width: 1414px;
@@ -411,7 +375,7 @@
 				font-size: 0;
 				gap: 0
 			}
-	
+
 			.tab-item {
 				padding: 0 40px;
 				height: 57px;
@@ -425,20 +389,20 @@
 				border-radius: 50px;
 				cursor: pointer;
 				font-size: 0.32rem;
-	
+
 				text-align: center;
 			}
-	
+
 			.tab-box .normal {
 				animation: noActiveforMax1080 0.75s forwards linear;
 				margin-bottom: 10px;
 			}
-	
+
 			.tab-box .active {
 				animation: activeforMax1080 0.75s forwards linear;
 				margin-bottom: 10px;
 			}
-	
+
 			.paragraph-box {
 				padding: 0.3rem 0.24rem;
 				/* min-width: 954px; */
@@ -447,17 +411,17 @@
 				margin: 0 auto;
 				font-size: 0.2rem;
 			}
-	
+
 			.paragraph-box p {
 				margin-bottom: 0.2rem;
 				font-size: 0.3rem;
 			}
-	
+
 			.paragraph-box .title {
 				font-size: 0.42rem;
 				line-height: 0.89rem;
 			}
-	
+
 			.paragraph-box li {
 				font-size: 0.3rem;
 			}
@@ -471,19 +435,18 @@
 			<div class="li-box">
 				<div class="zhuti">
 					<div class="shadow-title">
-						<div class="title-text">
-							<div>OPEN </div>
-							<div class="second-line">CALL</div>
+						<div class="title-text-bg">
+							<!-- <div>OPEN </div>
+							<div class="second-line">CALL</div> -->
 						</div>
 					</div>
-					<div v-if="showPage" class="imgFixed"></div>
 					<div class="center-box">
 						<div class="img-bg" id="imgBg"></div>
 					</div>
 					<div class="on-shadow-title-box">
-						<div class="on-shadow-title">
-							<div>OPEN </div>
-							<div class="second-line">CALL</div>
+						<div class="on-shadow-title-bg">
+							<!-- <div>OPEN </div>
+							<div class="second-line">CALL</div> -->
 						</div>
 					</div>
 	
@@ -614,45 +577,9 @@
 		createApp({
 			setup() {
 				const classActive = ref(true);
-				const showPage = ref(false);
-				const showPageRemove = ref(false);
-				onMounted(() => {
-					const targetDiv = document.getElementById('imgBg');
-					const options = {
-						root: null, // 使用视口作为根元素
-						rootMargin: '0px',
-						bottom: '100px',
-						threshold: 1 // 当目标元素与视口相交程度达到 0% 时触发
-					};
-
-					const observer = new IntersectionObserver(function (entries, observer) {
-						entries.forEach(entry => {
-							if (entry.isIntersecting) {
-								console.log('到了!');
-								var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-								if (scrollTop < 900) {
-									showPage.value = false;
-								}
-								// 执行你的逻辑
-							} else {
-								var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-								console.log('scrollTop!', scrollTop);
-								console.log('离开了!');
-								if (scrollTop > 400) {
-									showPage.value = true;
-								}
-
-
-								// 执行其他逻辑
-							}
-						});
-					}, options);
-
-					observer.observe(targetDiv);
-				})
-
+				
 				return {
-					classActive, showPage, showPageRemove
+					classActive
 				}
 			}
 		}).mount('#app')
