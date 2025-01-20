@@ -5,6 +5,7 @@
 	<meta charset="UTF-8" />
 	<link rel="icon" href="/favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/inter-ui/inter.css">
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<title>open call</title>
 	<meta name="viewport"
@@ -26,6 +27,7 @@
 		})(document, window);
 	</script>
 
+
 	<style>
 		* {
 			padding: 0;
@@ -33,30 +35,13 @@
 		}
 
 		body {
-			font-family: 'MyCustomFont';
+			font-family: 'Inter', sans-serif;
 			color: #333;
 		}
 
 		.page-body {
 			width: 100%;
 			/* overflow-x: auto; */
-		}
-
-
-		@font-face {
-			font-family: 'MyCustomFont';
-			src: url('/global-show-tell/opencall/assets/InterVariable.woff2') format('woff2');
-			font-weight: 100 200 300 400 500 600 700 800 900;
-			font-style: italic;
-			font-display: swap;
-		}
-
-		@font-face {
-			font-family: 'MyCustomFont';
-			font-style: italic;
-			font-weight: 100 900;
-			font-display: swap;
-			src: url("/global-show-tell/opencall/assets/InterVariable-Italic.woff2") format("woff2");
 		}
 
 		.li-box {
@@ -129,6 +114,7 @@
 			left: 0;
 			right: 0;
 			margin: 0 auto;
+			font-family: 'Inter', sans-serif;
 		}
 
 
@@ -164,6 +150,7 @@
 			flex: 0;
 			font-size: 32px;
 			text-align: center;
+			font-family: 'Inter', sans-serif;
 		}
 
 		.tab-box .active {
@@ -187,6 +174,7 @@
 		.paragraph-box p {
 			margin-bottom: 20px;
 			font-size: 20px;
+			font-family: 'Inter', sans-serif;
 		}
 
 		.group-class {
@@ -195,6 +183,7 @@
 
 		.group-class p {
 			margin-bottom: 0;
+			font-family: 'Inter', sans-serif;
 		}
 
 		.paragraph-box .title {
@@ -449,12 +438,13 @@
 							<div class="second-line">CALL</div> -->
 						</div>
 					</div>
-	
+
 				</div>
 			</div>
 			<div class="content" id="content">
 				<div class="tab-box">
-					<div class="tab-item" @click="classActive = true" :class="{active : classActive,normal:!classActive }">
+					<div class="tab-item" @click="classActive = true"
+						:class="{active : classActive,normal:!classActive }">
 						Submission Guidelines</div>
 					<div class="tab-item" @click="classActive = false"
 						:class="{active : !classActive ,normal:classActive }">Call For Collaboration</div>
@@ -538,7 +528,7 @@
 							For inquiries, please contact <a href="">group email</a>.
 						</p>
 					</div>
-	
+
 				</template>
 				<template v-else>
 					<div class="paragraph-box">
@@ -564,11 +554,11 @@
 						</p>
 					</div>
 				</template>
-	
+
 			</div>
-	
+
 		</div>
-	
+
 	</div>
 
 	<script>
@@ -577,7 +567,7 @@
 		createApp({
 			setup() {
 				const classActive = ref(true);
-				
+
 				return {
 					classActive
 				}
